@@ -94,3 +94,11 @@ for (int i = 0;i<15;i++){
 
 
 } }
+bool searchDiagonal(char *a){
+char *ketemu = strstr(getWordDiagonal(panjang),a);
+char *ketemu_kebalik = strstr(reverse(getWordDiagonal(panjang)),a);
+
+for (int i = 0;i<15;i++){
+    if (ketemu){return true;}
+    else if (ketemu_kebalik){return true; }
+} }
