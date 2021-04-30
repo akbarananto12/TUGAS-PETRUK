@@ -45,3 +45,7 @@ int main()
     }
     return 0;
 }
+
+char *getWordVertical(int a){}
+char *getWordHorizontal(int a){}
+char *getWordDiagonal(int a){}
