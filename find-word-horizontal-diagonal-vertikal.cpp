@@ -28,6 +28,7 @@ char *getWordDiagonal(int a);
 char *reverse(char *a);
 bool searchVertical(char *a);
 bool searchHorizontal(char *a);
+bool searchDiagonal(char *a);
 
 
 int main()
@@ -65,18 +66,24 @@ char HurufVertikal[rows*rows+1];
     return KataVertikal;}
 
 }
+
 char *getWordHorizontal(int a){}
+
 char *getWordDiagonal(int a){}
+
 char *reverse(char *a){}
-bool searchVertical(char *a){ char *ketemu = strstr(getWordVertical(panjang),a);
+
+bool searchVertical(char *a){ 
+char *ketemu = strstr(getWordVertical(panjang),a);
 char *ketemu_kebalik = strstr(reverse(getWordVertical(panjang)),a); }
 
 for (int i = 0;i<15;i++){
     if (ketemu){return true;}
     else if (ketemu_kebalik){return true; }
 
-}
-bool searchHorizontal(char *a){}
+} }
+
+bool searchHorizontal(char *a){
 char *ketemu = strstr(getWordHorizontal(panjang),a);
 char *ketemu_kebalik = strstr(reverse(getWordHorizontal(panjang)),a);
 
@@ -86,4 +93,4 @@ for (int i = 0;i<15;i++){
 
 
 
-}
+} }
