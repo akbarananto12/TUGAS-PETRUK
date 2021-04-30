@@ -68,8 +68,8 @@ char HurufVertikal[rows*rows+1];
 char *getWordHorizontal(int a){}
 char *getWordDiagonal(int a){}
 char *reverse(char *a){}
-bool searchVertical(char *a){} char *ketemu = strstr(getWordVertical(panjang),a);
-char *ketemu_kebalik = strstr(reverse(getWordVertical(panjang)),a);
+bool searchVertical(char *a){ char *ketemu = strstr(getWordVertical(panjang),a);
+char *ketemu_kebalik = strstr(reverse(getWordVertical(panjang)),a); }
 
 for (int i = 0;i<15;i++){
     if (ketemu){return true;}
