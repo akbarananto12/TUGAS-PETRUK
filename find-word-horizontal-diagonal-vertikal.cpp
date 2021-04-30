@@ -77,3 +77,13 @@ for (int i = 0;i<15;i++){
 
 }
 bool searchHorizontal(char *a){}
+char *ketemu = strstr(getWordHorizontal(panjang),a);
+char *ketemu_kebalik = strstr(reverse(getWordHorizontal(panjang)),a);
+
+for (int i = 0;i<15;i++){
+    if (ketemu){return true;}
+    else if (ketemu_kebalik){return true; }
+
+
+
+}
