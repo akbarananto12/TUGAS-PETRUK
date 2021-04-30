@@ -71,7 +71,13 @@ char *getWordHorizontal(int a){}
 
 char *getWordDiagonal(int a){}
 
-char *reverse(char *a){}
+char *reverse(char *a ){
+  int panjang_char = strlen(a);
+  reverse (a,a+panjang_char);
+  return a;
+
+
+}
 
 bool searchVertical(char *a){ 
 char *ketemu = strstr(getWordVertical(panjang),a);
