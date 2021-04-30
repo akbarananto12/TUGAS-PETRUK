@@ -35,6 +35,7 @@ int main()
     char word[16];
     int n;
     cin>>n;
+    cin.ignore(1,'\n')
     for (int i=0;i<n;i++){
         cin.getline(word,16,'\n');
         if (searchVertical(word) || searchHorizontal(word))
