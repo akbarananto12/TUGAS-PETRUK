@@ -39,10 +39,10 @@ int main()
     cin.ignore(1,'\n')
     for (int i=0;i<n;i++){
         cin.getline(word,16,'\n');
-      if (searchVertical(word)|| searchHorizontal(word) || searchDiagonal(word))
-            cout << "Ada\n";
-        else
-            cout << "Tidak Ada\n";
+{
+            cout << "Ada\n"; }
+        else{
+            cout << "Tidak Ada\n";}
     }
     return 0;
 }
