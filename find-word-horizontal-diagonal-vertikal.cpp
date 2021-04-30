@@ -1,10 +1,12 @@
 #include <iostream>
+#include <algorithm>
 #include <cstring>
 
 using namespace std;
 const int cols = 16, rows = 15;
+int panjang = 0;
 
- char words[rows][cols] = {"tgbwwinterwsesn",
+ char words[rows][cols] =      {"tgbwwinterwsesn",
                                 "aaunttmmhfoodnb",
                                 "jlwcqldzmpmvdmr",
                                 "asagmquwvvbsohi",
@@ -20,10 +22,12 @@ const int cols = 16, rows = 15;
                                 "pdcrzmsngrdnrpz",
                                 "ohnkzwaterjgtra"};
 
-char *getWordVertical(int);
-char *reverse(char *);
-bool searchVertical(char *);
-bool searchHorizontal(char *);
+char *getWordVertical(int a);
+char *getWordHorizontal(int a);
+char *getWordDiagonal(int a);
+char *reverse(char *a);
+bool searchVertical(char *a);
+bool searchHorizontal(char *a);
 
 
 int main()
