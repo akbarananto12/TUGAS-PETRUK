@@ -46,7 +46,25 @@ int main()
     return 0;
 }
 
-char *getWordVertical(int a){}
+char *getWordVertical(int a){
+char HurufVertikal[rows*rows+1];
+    for (int i=0;i<cols-1;i++){
+        for (int j=0;j<rows;j++){
+        HurufVertikal[a] = words[j][i];
+        a++;
+        }
+    }
+    if (a == 225){
+    a = 0;
+
+
+   int panjang_huruf = strlen(HurufVertikal);
+    char *KataVertikal = (char*)malloc((panjang_huruf+1) * sizeof(char));
+    memcpy (KataVertikal,HurufVertikal,panjang_huruf+1);
+
+    return KataVertikal;}
+
+}
 char *getWordHorizontal(int a){}
 char *getWordDiagonal(int a){}
 char *reverse(char *a){}
