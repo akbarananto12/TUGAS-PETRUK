@@ -1,4 +1,4 @@
-/* 
+/*
 ANGGOTA KELOMPOK
 Ananto Akbar               2017051069
 Assyfa Naziwa Ganandy      2017051046
@@ -65,10 +65,13 @@ char HurufVertikal[rows*rows+1];
     }
     if (a == 225){
     a = 0;
+    }
     int panjang_huruf = strlen(HurufVertikal);
     char *KataVertikal = (char*)malloc((panjang_huruf+1) * sizeof(char));
     memcpy (KataVertikal,HurufVertikal,panjang_huruf+1);
-    return KataVertikal;} }
+    return KataVertikal;
+
+     }
 
 
 char *getWordHorizontal(int a){
@@ -77,13 +80,15 @@ char *getWordHorizontal(int a){
     for (int j=0;j<cols-1;j++){
     HurufHorizontal [a] = words [i][j];
     a++;}
-    
-    if (a == 225){
-    a = 0;
+
+    }
+     if (a == 225){
+    a = 0;}
     int panjang_huruf = strlen(HurufHorizontal);
     char *KataHorizontal = (char*)malloc((panjang_huruf+1) * sizeof(char));
     memcpy (KataHorizontal,HurufHorizontal,panjang_huruf+1);
-    return KataHorizontal;} } }
+    return KataHorizontal;
+     }
 
 
 char *getWordDiagonal(int a){
@@ -105,12 +110,15 @@ char *getWordDiagonal(int a){
             j = j +1;
             HurufDiagonal[a] = words [k][j];
             a++; } diagonal++; } }
+
   } if (a == 225){
-    a = 0;
+    a = 0; }
     int panjang_huruf = strlen(HurufDiagonal);
     char *KataDiagonal = (char*)malloc((panjang_huruf+1) * sizeof(char));
     memcpy (KataDiagonal,HurufDiagonal,panjang_huruf+1);
-    return KataDiagonal;} }
+    return KataDiagonal;
+
+     }
 
 
 
@@ -123,26 +131,37 @@ char *reverse(char *a ){
 bool searchVertical(char *a){
 char *ketemu = strstr(getWordVertical(panjang),a);
 char *ketemu_kebalik = strstr(reverse(getWordVertical(panjang)),a);
+int ada = 0;
 
 for (int i = 0;i<15;i++){
-    if (ketemu){return true;}
-    else if (ketemu_kebalik){return true; } } }
+    if (ketemu){ada++;}
+    else if (ketemu_kebalik){ada++; } }
+
+    return ada;
+     }
 
 
 
 bool searchHorizontal(char *a){
 char *ketemu = strstr(getWordHorizontal(panjang),a);
 char *ketemu_kebalik = strstr(reverse(getWordHorizontal(panjang)),a);
+int ada = 0;
 
 for (int i = 0;i<15;i++){
-    if (ketemu){return true;}
-    else if (ketemu_kebalik){return true; } } }
+    if (ketemu){ada++;}
+    else if (ketemu_kebalik){ada++; } }
+
+    return ada;
+     }
 
 
 bool searchDiagonal(char *a){
 char *ketemu = strstr(getWordDiagonal(panjang),a);
 char *ketemu_kebalik = strstr(reverse(getWordDiagonal(panjang)),a);
- 
+int ada =0;
 for (int i = 0;i<15;i++){
-    if (ketemu){return true;}
-    else if (ketemu_kebalik){return true; } } }
+    if (ketemu){ada++;}
+    else if (ketemu_kebalik){ada++; } }
+
+    return ada;
+     }
