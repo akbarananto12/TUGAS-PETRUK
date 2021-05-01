@@ -8,6 +8,7 @@ Karina Adityas Ramadhanti  2017051041
 #include <iostream>
 #include <algorithm>
 #include <cstring>
+#include <cstdlib>
 
 using namespace std;
 const int cols = 16, rows = 15;
