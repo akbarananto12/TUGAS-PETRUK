@@ -49,8 +49,7 @@ int main()
         if (searchVertical(word)|| searchHorizontal(word) || searchDiagonal(word)) {
             cout << "Ada\n"; }
         else{
-            cout << "Tidak Ada\n";}
-    }
+            cout << "Tidak Ada\n";} }
     return 0;
 }
 
@@ -58,14 +57,13 @@ char *getWordVertical(int a){
 char HurufVertikal[rows*rows+1];
     for (int i=0;i<cols-1;i++){
         for (int j=0;j<rows;j++){
-        HurufVertikal[a] = words[j][i];
+        HurufVertikal[a] = words[j][i]; 
         a++;}
     } if (a == 225){a = 0;}
     int panjang_huruf = strlen(HurufVertikal);
     char *KataVertikal = (char*)malloc((panjang_huruf+1) * sizeof(char));
     memcpy (KataVertikal,HurufVertikal,panjang_huruf+1);
-    return KataVertikal;
-     }
+    return KataVertikal;}
 
 char *getWordDiagonal(int a){
     char HurufDiagonal[rows*rows+1];
@@ -88,25 +86,20 @@ char *getWordDiagonal(int a){
     int panjang_huruf = strlen(HurufDiagonal);
     char *KataDiagonal = (char*)malloc((panjang_huruf+1) * sizeof(char));
     memcpy (KataDiagonal,HurufDiagonal,panjang_huruf+1);
-    return KataDiagonal;
-     }
-
-
+    return KataDiagonal;}
 
 char *reverse(char *a ){
   int panjang_char = strlen(a);
   reverse (a,a+panjang_char);
   return a; }
 
-
 bool searchVertical(char *a){
 char *ketemu = strstr(getWordVertical(panjang),a);
 char *ketemu_kebalik = strstr(reverse(getWordVertical(panjang)),a);
 int ada = 0;
-    if (ketemu){ada++;}
-    else if (ketemu_kebalik){ada++; } 
-    return ada;
-     }
+ if (ketemu){ada++;}
+   else if (ketemu_kebalik){ada++; } 
+ return ada;}
 
 bool searchHorizontal(char *a){
 char HurufHorizontal[rows*rows+1];
@@ -118,15 +111,14 @@ for (int i=0;i<rows;i++){
 char *ketemu = strstr(HurufHorizontal,a);
 char *ketemu_kebalik = strstr(reverse(HurufHorizontal),a);
 int ada = 0;
-if (ketemu){ada++;}
-else if (ketemu_kebalik){ada++;} 
+ if (ketemu){ada++;}
+  else if (ketemu_kebalik){ada++;} 
 return ada;}
-
 
 bool searchDiagonal(char *a){
 char *ketemu = strstr(getWordDiagonal(panjang),a);
 char *ketemu_kebalik = strstr(reverse(getWordDiagonal(panjang)),a);
 int ada =0;
-    if (ketemu){ada++;}
-    else if (ketemu_kebalik){ada++; } 
-    return ada;}
+ if (ketemu){ada++;}
+   else if (ketemu_kebalik){ada++; } 
+ return ada;}
