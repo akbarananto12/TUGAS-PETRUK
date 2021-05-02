@@ -31,7 +31,6 @@ int panjang = 0;
                                 "ohnkzwaterjgtra"};
 
 char *getWordVertical(int a);
-char *getWordHorizontal(int a);
 char *getWordDiagonal(int a);
 char *reverse(char *a);
 bool searchVertical(char *a);
@@ -60,36 +59,13 @@ char HurufVertikal[rows*rows+1];
     for (int i=0;i<cols-1;i++){
         for (int j=0;j<rows;j++){
         HurufVertikal[a] = words[j][i];
-        a++;
-        }
-    }
-    if (a == 225){
-    a = 0;
-    }
+        a++;}
+    } if (a == 225){a = 0;}
     int panjang_huruf = strlen(HurufVertikal);
     char *KataVertikal = (char*)malloc((panjang_huruf+1) * sizeof(char));
     memcpy (KataVertikal,HurufVertikal,panjang_huruf+1);
     return KataVertikal;
-
      }
-
-
-char *getWordHorizontal(int a){
-    char HurufHorizontal[rows*rows+1];
-    for (int i=0;i<rows;i++){
-    for (int j=0;j<cols-1;j++){
-    HurufHorizontal [a] = words [i][j];
-    a++;}
-
-    }
-     if (a == 225){
-    a = 0;}
-    int panjang_huruf = strlen(HurufHorizontal);
-    char *KataHorizontal = (char*)malloc((panjang_huruf+1) * sizeof(char));
-    memcpy (KataHorizontal,HurufHorizontal,panjang_huruf+1);
-    return KataHorizontal;
-     }
-
 
 char *getWordDiagonal(int a){
     char HurufDiagonal[rows*rows+1];
@@ -99,10 +75,8 @@ char *getWordDiagonal(int a){
     for (int j = i; j <= 14;j++){
     HurufDiagonal[a] = words [j][diagonal];
     diagonal++;
-    a++; } diagonal = 0;
-  }
-} if (a == 120){diagonal=1;}
-
+    a++; } diagonal = 0;} 
+  } if (a == 120){diagonal=1;}
   if (a >= 120){
   for (int i = 0; i<14;i++){
     for (int j = diagonal-1;j<14;j++){
@@ -110,14 +84,11 @@ char *getWordDiagonal(int a){
             j = j +1;
             HurufDiagonal[a] = words [k][j];
             a++; } diagonal++; } }
-
-  } if (a == 225){
-    a = 0; }
+  } if (a == 225){a = 0; }
     int panjang_huruf = strlen(HurufDiagonal);
     char *KataDiagonal = (char*)malloc((panjang_huruf+1) * sizeof(char));
     memcpy (KataDiagonal,HurufDiagonal,panjang_huruf+1);
     return KataDiagonal;
-
      }
 
 
@@ -132,36 +103,30 @@ bool searchVertical(char *a){
 char *ketemu = strstr(getWordVertical(panjang),a);
 char *ketemu_kebalik = strstr(reverse(getWordVertical(panjang)),a);
 int ada = 0;
-
-for (int i = 0;i<15;i++){
     if (ketemu){ada++;}
-    else if (ketemu_kebalik){ada++; } }
-
+    else if (ketemu_kebalik){ada++; } 
     return ada;
      }
-
-
 
 bool searchHorizontal(char *a){
-char *ketemu = strstr(getWordHorizontal(panjang),a);
-char *ketemu_kebalik = strstr(reverse(getWordHorizontal(panjang)),a);
+char HurufHorizontal[rows*rows+1];
+for (int i=0;i<rows;i++){
+    for (int j=0;j<cols-1;j++){
+      HurufHorizontal [panjang] = words [i][j]; panjang++;}
+    } if (panjang == 225){panjang = 0;}
+
+char *ketemu = strstr(HurufHorizontal,a);
+char *ketemu_kebalik = strstr(reverse(HurufHorizontal),a);
 int ada = 0;
-
-for (int i = 0;i<15;i++){
-    if (ketemu){ada++;}
-    else if (ketemu_kebalik){ada++; } }
-
-    return ada;
-     }
+if (ketemu){ada++;}
+else if (ketemu_kebalik){ada++;} 
+return ada;}
 
 
 bool searchDiagonal(char *a){
 char *ketemu = strstr(getWordDiagonal(panjang),a);
 char *ketemu_kebalik = strstr(reverse(getWordDiagonal(panjang)),a);
 int ada =0;
-for (int i = 0;i<15;i++){
     if (ketemu){ada++;}
-    else if (ketemu_kebalik){ada++; } }
-
-    return ada;
-     }
+    else if (ketemu_kebalik){ada++; } 
+    return ada;}
